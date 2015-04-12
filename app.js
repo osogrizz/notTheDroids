@@ -1,8 +1,15 @@
 Physics(function(world){
-    var gameWidth = 1280;
-    var gameHeight = 580;
+    // var gameWidth = 1280;
+    // var gameHeight = 580;
+    var gameWidth = window.innerWidth;
+    var gameHeight = window.innerHeight;
 
-    
+    // Start Game audio/ Que player so they know they have clicked to start the game.
+    // var startGame = new Audio (src = "http://soundbible.com/19-Lightsaber-Turn-On.html");
+
+    // $(".startGame" ).click(function() {
+    //   startGame.play();
+    // });
 
     var renderer = Physics.renderer('canvas', {
         el: 'gameView',
@@ -23,17 +30,12 @@ Physics(function(world){
         }
     });
 
-    
-
-
 
     // add the renderer
     world.add( renderer );
         // render on each step
         world.on('step', function(){
-        world.render();
-        
-    
+        world.render(); 
     });
 
     // bounds of the window
@@ -43,7 +45,7 @@ Physics(function(world){
     // world.add(Physics.behavior('edge-collision-detection', {
     //     aabb: gameViewBounds,
     //     restitution: 0,
-    //     cof: 0,
+    //     cof: 2,
 
     // }));
 
@@ -53,7 +55,7 @@ Physics(function(world){
 
    craft = Physics.body('circle', {
        x:250,
-       y:250,
+       y:400,
        radius:45,
        label: 'craft',
        uid: 1,
@@ -70,8 +72,9 @@ Physics(function(world){
     // window.setInterval ( function() {target, x,y, { 
 
     var target = Physics.body( 'circle', {
-        x: 1230,
-        y: 250,
+        // Creates target just off of the screen regardless of window size.
+        x: gameWidth + 125,
+        y: 400,
         // gives body a direction and speed.
         vx: -0.1,
         vy: 0.001,
@@ -129,9 +132,10 @@ Physics(function(world){
             world.emit('move', 'right');
         } else if (event.keyCode === 38) {
             world.emit('move', 'up');
-        }else if (event.keyCode === 40) {
+        } else if (event.keyCode === 40) {
             world.emit('move', 'down');
-        }
+        } 
+
     });
 
     // start the ticker
@@ -164,16 +168,11 @@ Physics(function(world){
             fillStyle: 'green',
             lineWidth: 0,
             
-
         }
 
     });
 
- 	
-
-    world.add(blasters);
-      
-
+    world.add(blasters)
     });
 
 
@@ -182,8 +181,6 @@ Physics(function(world){
 
 
 //  Reconfigured move keys based on example code. This now includes 'up' 'down' functionality.
-
-
     world.on('move', function(data, e) {
 
     	//case stmt left/right/down/up
@@ -197,8 +194,6 @@ Physics(function(world){
     	} else if (data === 'down') {
     		craft.state.pos.set(craft.state.pos.x, craft.state.pos.y + (40));
     	}
-
-
     });
 
 
@@ -207,14 +202,13 @@ Physics(function(world){
         
         var targetXplode = Physics.body('circle', {
 
-            x: target.state.pos.x  ,
-            y: target.state.pos.y ,
+            x: target.state.pos.x,
+            y: target.state.pos.y,
             label: 'targetXplode',
             treatment: 'kinematic', 
       
         // Timeout function to remove xplode effect/body shorly after creation.
-     
-        
+       
     });
 
          
@@ -248,17 +242,17 @@ Physics(function(world){
 
         // } if (shouldBeRemoved(data.collisions[0].bodyB)) {
         //     world.removeBody(data.collisions[0].bodyB);
-
-        
+  
         } 
-
-
     });
 
-    
-
-
-
-
-
 });
+
+
+
+
+
+
+
+
+

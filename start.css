@@ -5,11 +5,13 @@ body {
 
 }
 
+/* Controls the speeed of the flash effect*/
+
 #flash {
 	-webkit-animation: flash linear 4s infinite;
 	
 }
-
+/* Adjust the look of the effect.*/
 @-webkit-keyframes flash{
 	0% {opacity: .7; }
 	50% {opacity: .1; }
@@ -36,17 +38,35 @@ a {
 a:hover {
 	text-decoration: none;
 	color: white;
-	
-
 }
 
-
-form {
-	margin-left: 40%;
-	margin-top: 25%;
+/* Centers the div horizontally */
+div {
+	text-align: center;
 
 }
+/* Centers the div vertically */
+.outer {
+    display: table;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
 
+.middle {
+	/* Allows the div to act like a td element.*/
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.inner {
+    margin-left: auto;
+    margin-right: auto; 
+    /* Width can be any value, or not used at all. */
+    /*width: ;*/
+}
+
+/* Hides the audio player for persistent sound effect, cleaner look.*/
 audio {
 	margin-top: 20%;
 	float: right;
