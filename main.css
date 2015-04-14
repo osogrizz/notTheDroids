@@ -57,7 +57,7 @@ html, body {
 }
 
 
-/* Another feature for a side scroller, prevent going too far forward.*/
+/* Another feature for a side scroller, prevents going too far forward.*/
 /*#flyZone {
 	height: 560px;
 	width: 640px;
@@ -124,7 +124,7 @@ html, body {
 	z-index: 1000;
 }*/
 
-/* Use only when the image file cannot be flipped and saved to preference.*/
+/* Use only when the image file cannot be flipped and saved to fit preference.*/
 /*craft {
 	-webkit-transform: scaleX(-1);
 }*/

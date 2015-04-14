@@ -17,22 +17,22 @@
 <body>
   <div class="outer">
     <div class="middle">
-
-	<div id="start" class="inner">
-	<form action="">
-	  <label for="Start">
-	    <a class="button" id="flash" href="file:///Users/Leo/Desktop/notTheDroids/index.html" role="button">Start Game</a>
-	  </label>
-	</form>
-  </div>
-  </div>
+	   <div id="start" class="inner">
+	    <form action="">
+	      <label for="Start">
+	        <a class="button" id="flash" href="file:///Users/Leo/Desktop/notTheDroids/index.html"    role="button">Start Game</a>
+	      </label>
+	    </form>
+      </div>
+    </div>
 	</div>
-
-  <audio controls class = "startGameClass" >
+  <!-- Sound to be played on button push, lightsaber, but it need to play before the page refreshes. -->
+  <!-- <audio controls class = "startGameClass" >
   <source src="" type="">
     <source src="http://www.mediacollege.com/downloads/sound-effects/star-wars/lightsaber/lightsaber_04.wav" type="audio/wav">
-  </audio>
-
+  </audio> -->
+  
+  <!-- Background sound Vader breathing. -->
 	<audio controls loop autoplay >
       <source src="" type="">
       <source src="https://archive.org/download/VaderBreathing/Vadrbrth.mp3" type="audio/mpeg">
@@ -45,13 +45,13 @@
     <script src="app.js"></script>
 	  <script src="start.js"></script>
     
-
-    <script language="javascript">
-      function playIt() {
-        document.getElementById("embed").innerHTML="<embed src='play.mp3' autostart=true loop=false volume=100 hidden=true>";
-            return true;
-      }
-    </script>
+  <!-- lightsaber sound, currently works on page load. -->
+    <!-- <script>
+      var startSound = new Audio("lightsaber.wav");
+        
+        startSound.play();
+        
+    </script> -->
 
 </body>
 </html>

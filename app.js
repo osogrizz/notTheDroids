@@ -103,7 +103,7 @@ Physics(function(world){
     
 
 
-    // ensure objects bounce when edge collision is detected
+    // ensure objects bounce when edge collision is detected 
     // world.add(Physics.behavior('constant-acceleration'));
 
     world.add(Physics.behavior('body-impulse-response'));
@@ -237,7 +237,7 @@ Physics(function(world){
             console.log(data.collisions[0]);
         } if (shouldBeRemoved(data.collisions[0].bodyA )) {
             world.removeBody( data.collisions[0].bodyB);
-            $('#life:last-child' ).remove( );
+            $('#life:last-child' ).remove();
             
 
         // } if (shouldBeRemoved(data.collisions[0].bodyB)) {

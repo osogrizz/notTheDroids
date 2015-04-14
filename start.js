@@ -1,5 +1,8 @@
-var startGame = new Audio (src = "./notTheDroids/lightsaber.wav");
+//  var startSound = new Audio("lightsaber.wav");
 
-$(".startGame" ).click(function() {
-  startGame.play();
-});
+//         startSound.play();
+
+// $(".startGameClass" ).click(function(e) {
+//   e.preventDefualt();
+  
+// });
